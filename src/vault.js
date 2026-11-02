@@ -73,3 +73,12 @@ console.log(accessVault(undefined));
 console.log("correct key", testCorrectKey());
 console.log("incorrect key", testIncorrectKey());
 console.log("wrong key type", testWrongKeyType());
+
+console.log("extra tests");
+
+attemptEntry("");
+attemptEntry(123);
+attemptEntry(null);
+attemptEntry({});
+attemptEntry([]);
+attemptEntry(NaN);

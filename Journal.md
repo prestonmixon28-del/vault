@@ -6,3 +6,5 @@ created two custom error classes to explain why a key was rejected. Throwing err
 added try, catch, and finally to handle errors. The catch block handles errors, while the finally block runs every time. This helps keep the program running even when someone enters an inncorrect key
 
 created automated tests to check if the vault accepts the correct key and catches the right error. Testing helps find problems and makes sure the program works right
+
+tested the vault with different types of inputs, incluiding numbers, empty strings, and null. The program handled the incorrect keys without crashing. I learned that testing different inputs helps find problems and make code more reliable
