@@ -45,6 +45,31 @@ function attemptEntry(key) {
     }
 }
 
+function testCorrectKey() {
+    return accessVault("SECRET_123") === "Access granted. Welcome to the vault!";
+}
+
+function testIncorrectKey() {
+    try {
+        accessVault("WRONG_KEY");
+    } catch (e) {
+        return e instanceof VaultLockedError;
+    }
+    return false;
+}
+
+function testWrongKeyType() {
+    try {
+        accessVault("wrong_key_type");
+        return false;
+    } catch (e) {
+        return e instanceof InvalidKeyError;
+    }
+}
+
 console.log(accessVault("SECRET_123"));
 console.log(accessVault("WRONG_KEY"));
 console.log(accessVault(undefined));
+console.log("correct key", testCorrectKey());
+console.log("incorrect key", testIncorrectKey());
+console.log("wrong key type", testWrongKeyType());
